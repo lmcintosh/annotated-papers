@@ -10,6 +10,7 @@
 \usepackage{polynom}
 \usepackage{centernot}
 \usepackage{enumerate}
+\usepackage{caption}
 \usepackage{parskip}
 \usepackage[all]{xy}
 
@@ -52,6 +53,17 @@
 \renewcommand{\H}{\mathbb{H}}
 \renewcommand{\mod}{\mbox{ mod }}
 \newcommand{\given}{\mbox{ } | \mbox{ }}
+
+
+%: ----------------------- paths to graphics ------------------------
+
+\ifpdf
+    \graphicspath{{Figures/PNG/}{Figures/PDF/}{Figures/}}
+\else
+    \graphicspath{{Figures/EPS/}{Figures/}}
+\fi
+
+
 \begin{document}
 
 \title{Annotated Bibliography}
@@ -160,9 +172,20 @@ So the main results of the paper are that
 \item and that input from both ON and OFF bipolar cells explains this
 \end{enumerate}
 
-\subsubsection{Pitkow 2012, }
- - nonlinearity contributes to decorr - can't say it's primary way of decorrelation, given filters were non optimal (determined using white noise but used on natural images; should have used maximally informative dimensions)
- - nonlinearities optimal for information transmission
+\subsubsection{Pitkow 2012, Decorrelation and Efficient Coding in Retinal Ganglion Cells}
+Historically the field of sensory coding has pointed to center-surround, biphasic spatiotemporal filtering in the retina as the primary mechanism of reducing the redundancy in natural scenes and decorrelating neural responses.  Pitkow and Meister investigate this claim by quantifying how each step of an LN model fit to salamander and macaque retina ganglion cells decorrelated natural images.  Surprisingly, they find that the nonlinearity contributes the most to decorrelating natural images. 
+
+\begin{figure}
+\includegraphics[width=\textwidth]{Pitkow2012_fig2_cropped.pdf}
+\caption*{Figure 2 of Pitkow \& Mesiter, 2012}
+\end{figure}
+They then compute the optimal gain and threshold of a sigmoidal nonlinearity by assuming spike count distributions were Gaussian given the mean spike count (which is determined by the sigmoid nonlinearity), and then numerically optimizing bits/spike over the gain and threshold parameters.  Interestingly, if gain and threshold are estimated from the firing rates of salamander retinal ganglion cells, they fall within the nearly optimally efficient regime.
+\begin{figure}
+\centering
+\includegraphics[width=0.2\textwidth]{Pitkow2012_fig5.pdf}
+\caption*{Figure 5 of Pitkow \& Mesiter, 2012.  Red dots are salamander retinal ganglion cells.}
+\end{figure}
+It would be interesting to do a more fine grained analysis between and within different retinal ganglion cell types.  Presumably, the nonlinearity would strongly contribute to decorrelation between different cell types since direction-selective cells and object motion sensitive cells have different nonlinearities, for instance, while perhaps linear filtering is the best way of decorrelating cells of the same type.  Another thing to note is that the retinal ganglion cell receptive fields were measured using spatiotemporal white noise and then tested using natural images.  Since we know that these filters adapt dramatically, we may be dramatically underestimating the ability of linear mechanisms to decorrelate natural images.  A better approach would have been to use Maximally Informative Dimensions to measure the receptive fields under natural conditions.
  
  
  
