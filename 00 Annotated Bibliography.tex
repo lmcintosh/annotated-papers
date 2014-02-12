@@ -73,7 +73,7 @@
 
 % Optimality in Early Sensory Systems
 \section{Theoretical Neuroscience}
-\subsection{Optimality in Sensory Systems}
+\subsection{Efficient and Predictive Coding}
 \subsubsection{Atick 1992, Could Information Theory be an Ecological Theory of Sensory Processing?}
 
 J.J. Atick identifies two sources of inefficiencies in information processing, 1) the unequal use of symbol values, and 2) statistical correlation between different symbols in a given message.  Consider a message $w = (m_1, \dots, m_l) \in M$ where each $m_i$ takes a value from a set of cardinality $N$.  Then
@@ -97,11 +97,6 @@ Introducing a simplified model of the retina where photoreceptor activity levels
 Atick does however admit that, ``it is not clear in the retina what principle dictates the choice of the low-pass filter," since, although an optimal filter can be derived, a linear filter is not necessarily obtained when simply starting at the first principle that statistical correlations between symbols must be reduced.  Putting this in a modern context, this uncertainty is well justified; Xaq Pitkow and Markus Meister's 2012 paper for instance established that less than a quarter of the correlations present in naturalistic visual stimuli are reduced by the retina's linear filtering.  Instead, over half of the reduction in stimulus correlations is due to the nonlinear thresholding at the bipolar-retinal ganglion cell synapse.  As Xaq has mentioned, ``If the brain's computations could be carried out by linear filtering, and since the sum of many steps of linear filters is just another linear filter, we might as well not have a brain."\footnote{Pitkow, Xaq.  ``Efficient coding and beyond in the visual system."  The Stanford Center for Mind, Brain, and Computation Theoretical Neuroscience Colloquium Talk on Thursday, March 7.}
 
 
-
-\subsubsection{Laughlin 1998, The metabolic cost of neural information}
-This paper measures the amount of ATP required in the blowfly retina to transmit a bit of information and compares it to Landauer's limit.  Laughlin et al. conclude that it costs $10^4$ ATP molecules to transmit a bit at a chemical synapse, and $10^6$ - $10^7$ ATP for graded signals in an interneuron or a photoreceptor, or for spike coding.  Since the hydrolysis of 1 ATP to ADP releases about 25 $kT$ (Landauer's limit is $kT$/bit), information transmission in neural networks is orders of magnitude ($2.5 \times 10^6$) more costly than the theoretical minimum.\\
-\\
-This paper also observes that in noise-limited systems, low capacity channels transmit information more efficiently.  This conclusion derived from their observation that the capacity of a neural signaling pathway is increased by adding more synapses.  This results in an exponential increase in the cost per bit of information transmitted as the bit rate increases.
 
 
 \subsubsection{Fairhall 2001, Efficiency and ambiguity in an adaptive neural code}
@@ -186,7 +181,13 @@ They then compute the optimal gain and threshold of a sigmoidal nonlinearity by 
 \caption*{Figure 5 of Pitkow \& Mesiter, 2012.  Red dots are salamander retinal ganglion cells.}
 \end{figure}
 It would be interesting to do a more fine grained analysis between and within different retinal ganglion cell types.  Presumably, the nonlinearity would strongly contribute to decorrelation between different cell types since direction-selective cells and object motion sensitive cells have different nonlinearities, for instance, while perhaps linear filtering is the best way of decorrelating cells of the same type.  Another thing to note is that the retinal ganglion cell receptive fields were measured using spatiotemporal white noise and then tested using natural images.  Since we know that these filters adapt dramatically, we may be dramatically underestimating the ability of linear mechanisms to decorrelate natural images.  A better approach would have been to use Maximally Informative Dimensions to measure the receptive fields under natural conditions.
- 
+
+
+\subsection{Energy Cost and Efficiency of the Brain}
+\subsubsection{Laughlin 1998, The metabolic cost of neural information}
+This paper measures the amount of ATP required in the blowfly retina to transmit a bit of information and compares it to Landauer's limit.  Laughlin et al. conclude that it costs $10^4$ ATP molecules to transmit a bit at a chemical synapse, and $10^6$ - $10^7$ ATP for graded signals in an interneuron or a photoreceptor, or for spike coding.  Since the hydrolysis of 1 ATP to ADP releases about 25 $kT$ (Landauer's limit is $kT$/bit), information transmission in neural networks is orders of magnitude ($2.5 \times 10^6$) more costly than the theoretical minimum.\\
+\\
+This paper also observes that in noise-limited systems, low capacity channels transmit information more efficiently.  This conclusion derived from their observation that the capacity of a neural signaling pathway is increased by adding more synapses.  This results in an exponential increase in the cost per bit of information transmitted as the bit rate increases.
  
  
 \subsection{Methodologies}
